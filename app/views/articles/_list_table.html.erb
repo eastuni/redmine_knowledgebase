@@ -51,9 +51,9 @@
 
       <% unless @author_id %>
         <td class="author">        
-	  <%= link_to article.author.name, { :controller => 'articles', 
+	  <%= link_to article.author.to_s, { :controller => 'articles', 
           :action => 'authored', 
-          :author_id => article.author.id, 
+          :author_id => article.author_id, 
           :project_id => @project} %> 
 	</td>
       <% end %>
