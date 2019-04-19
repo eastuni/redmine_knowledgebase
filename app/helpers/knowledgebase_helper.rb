@@ -34,7 +34,7 @@ module KnowledgebaseHelper
     end
     
     sum = ""
-    unless redmine_knowledgebase_settings_value(:disable_article_summaries)
+    unless redmine_knowledgebase_settings_value('disable_article_summaries')
       sum = "<p>" + (truncate article.summary, :length => options[:truncate]) + "</p>"
     end
 
@@ -42,11 +42,11 @@ module KnowledgebaseHelper
   end
 
   def sort_categories?
-    redmine_knowledgebase_settings_value(:sort_category_tree)
+    redmine_knowledgebase_settings_value('sort_category_tree')
   end
   
   def show_category_totals?
-    redmine_knowledgebase_settings_value(:show_category_totals)
+    redmine_knowledgebase_settings_value('show_category_totals')
   end
   
   def updated_by(updated, updater)
@@ -111,7 +111,7 @@ module KnowledgebaseHelper
     attachments = {:name => 'attachments', :action => :attachments, :partial => 'articles/sections/attachments', :label => :label_attachment_plural}
     history = {:name => 'history', :action => :history, :partial => 'articles/sections/history', :label => :label_history}
     
-    unless redmine_knowledgebase_settings_value(:show_attachments_first)
+    unless redmine_knowledgebase_settings_value('show_attachments_first')
 
       tabs = [content, comments, attachments, history]
     else

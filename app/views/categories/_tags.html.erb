@@ -4,8 +4,8 @@
     <h3><%= l(:label_filter_by_tag) %></h3>
 
     <% critical_tag_hash = Hash[] %>
-    <% if redmine_knowledgebase_settings_value(:critical_tags) %>
-      <% critical_array = redmine_knowledgebase_settings_value(:critical_tags).split(/\s*,\s*/) %>
+    <% if redmine_knowledgebase_settings_value('critical_tags') %>
+      <% critical_array = redmine_knowledgebase_settings_value('critical_tags').split(/\s*,\s*/) %>
       <% critical_tag_hash = Hash[ critical_array.map { |tag| [tag.downcase, 1] } ] %>
       <% critical_array.each do |critical| %>
         <% critical_low = critical.downcase %> 
